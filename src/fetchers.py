@@ -97,7 +97,7 @@ def fetch_gem(handle: str, company_name: str) -> list:
     return jobs
 
 
-def fetch_workday(handle: str, company_name: str) -> list:
+def fetch_workday(handle: str, company_name: str, seniority_keywords: list = None) -> list:
     # handle format: "{subdomain}.wd{n}/{board}"  e.g. "crowdstrike.wd5/crowdstrikecareers"
     if '/' not in handle:
         print(f'    Workday handle must be "subdomain.wdN/board", got: {handle}')
@@ -108,8 +108,10 @@ def fetch_workday(handle: str, company_name: str) -> list:
     base = f'https://{tenant_domain}.myworkdayjobs.com'
     api  = f'{base}/wday/cxs/{company_slug}/{board}'
 
-    # Pre-filter by leadership titles to avoid fetching thousands of jobs
-    search = 'VP OR Director OR "Head of" OR "Vice President" OR "Senior Director"'
+    # Build pre-filter search string from profile seniority keywords
+    _default = ['VP', 'Director', 'Head of', 'Vice President', 'Senior Director']
+    terms = seniority_keywords or _default
+    search = ' OR '.join(f'"{t}"' if ' ' in t else t for t in terms)
 
     listings = []
     offset, limit = 0, 20

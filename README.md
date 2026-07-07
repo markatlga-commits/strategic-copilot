@@ -106,8 +106,9 @@ The script can now read and write your sheet.
 Otherwise, follow the steps below:
 
 1. Create a free account at [github.com](https://github.com) if you don't have one
-2. You're already on this repository — click **Fork** (top right) → **Create fork**
+2. Go to [github.com/jordanmilner-lgtm/strategic-copilot](https://github.com/jordanmilner-lgtm/strategic-copilot) and click **Fork** (top right) → **Create fork**
 3. On your forked repo, click **Settings** → under the repo name, check if it's set to **Public** or **Private**. Either works — if you prefer your target companies and profile to stay private, switch it to **Private** (Settings → scroll down → Change repository visibility).
+4. **Enable GitHub Actions on your fork** — GitHub disables Actions by default on forked repos. Go to the **Actions** tab on your fork and click **I understand my workflows, go ahead and enable them**. Without this step, the scan will never run.
 
 ---
 

@@ -54,7 +54,12 @@ def main():
             continue
 
         print(f'\n{name} ({ats}/{handle})')
-        jobs = fetch_fn(handle, name)
+        if ats == 'workday':
+            from filters import _parse_list
+            seniority = _parse_list(profile.get('seniority_keywords', ''))
+            jobs = fetch_fn(handle, name, seniority_keywords=seniority or None)
+        else:
+            jobs = fetch_fn(handle, name)
         total_fetched += len(jobs)
         print(f'  Fetched:   {len(jobs)}')
 

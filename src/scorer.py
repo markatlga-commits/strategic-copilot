@@ -44,14 +44,14 @@ SCORING SCALE — fit_score must be an integer from 1 to 10. Do not exceed 10.
 STRONG NEGATIVE SIGNALS — each one meaningfully pushes the score down toward 1-4:
 {neg}
 
-SCOPE PARAMETERS:
-MATCH — title and responsibilities suggest a senior individual driving strategy/mandate at VP, Director, Head of, or equivalent level AND reports to C-suite or VP+
-BELOW — Manager, IC, or unclear seniority
-UNCLEAR — reporting structure not mentioned
+SCOPE PARAMETERS — based on the candidate's target seniority level as described in their background above:
+MATCH — title and seniority level match what the candidate is targeting AND reporting structure suggests appropriate scope
+BELOW — title is below the candidate's target level or is an individual contributor role
+UNCLEAR — seniority or reporting structure not mentioned
 
 ABSTRACT FIT FLAG — answer YES or NO only:
-YES: Role is VP/Director/Head of level (or equivalent) AND mandate maps directly to the candidate's core function and strengths as described in their profile above AND their background directly applies.
-NO: Anything else — adjacent function, IC-level, or mixed signals.
+YES: Role is at the candidate's target seniority level AND mandate maps directly to their core function and strengths as described in their profile above AND their background directly applies.
+NO: Anything else — adjacent function, below target level, or mixed signals.
 
 COMPENSATION:
 {comp_line}
